@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grain Scan - Rice Grain Health Check</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/index-style.css') }}">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Home Section -->
+    <section id="home" class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4">Rice Grain Health Check</h1>
+            <p class="lead">Welcome to Grain Scan, a deep learning app to predict the health of rice grains.</p>
+            <form id="uploadForm" method="POST" enctype="multipart/form-data" class="mt-4">
+                <input type="file" id="fileInput" name="file" accept="image/*" class="mb-2">
+                <input type="submit" value="Upload Your Grain" class="btn btn-custom btn-lg">
+            </form>
+            <div id="result" class="mt-3">{{ message }}</div>
+        </div>
+    </section>
+
+    <!-- Return to Home Button -->
+    <div class="text-center my-4">
+        <a href="/" class="btn btn-primary btn-lg">Return to Home</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>© 2024 Grain Scan - All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Link to JS -->
+    <script src="{{ url_for('static', filename='scripts/index_scripts.js') }}"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
