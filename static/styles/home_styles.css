@@ -1,0 +1,114 @@
+:root {
+    --background-color: #ffffff;
+    --primary-accent: #005f73;
+    --secondary-accent: #0a9396;
+    --text-color: #001219;
+    --highlight-color: #ee9b00;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    transition: margin-left 0.3s;
+  }
+  
+  /* Navigation */
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-accent);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 10px 10px 10px 30px;
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--background-color);
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: var(--highlight-color);
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+  }
+  
+  /* Section */
+  .section {
+    padding: 80px 20px;
+    color: var(--text-color);
+    text-align: center;
+  }
+  
+  .section-heading {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-accent);
+    margin-bottom: 30px;
+  }
+  
+  .section-heading::after {
+    content: '';
+    width: 80px;
+    height: 4px;
+    background-color: var(--highlight-color);
+    display: block;
+    margin: 1em auto;
+  }
+  
+  /* Home */
+  #home {
+    background: linear-gradient(135deg, #0a9396, #005f73);
+    color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+  }
+  
+  #home p {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  /* Team Section */
+  #team {
+    background: linear-gradient(135deg, #ee9b00, #001219);
+    color: var(--background-color);
+    padding: 60px 20px;
+  }
+  
+  .card {
+    background-color: var(--secondary-accent);
+    color: var(--background-color);
+    border: none;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-title {
+    color: var(--highlight-color);
+  }
+  
