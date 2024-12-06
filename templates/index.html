@@ -49,7 +49,7 @@
         .hero-section h1 {
             font-size: 3rem;
             margin-bottom: 20px;
-            animation: glitch 1s infinite; /* Glitch effect */
+            /* Removed glitch animation */
         }
 
         .hero-section p {
@@ -123,15 +123,6 @@
             color: white;
             padding: 20px 0;
             text-align: center;
-        }
-
-        /* Glitch Effect Animation */
-        @keyframes glitch {
-            0% { text-shadow: 1px 1px 0 rgba(255, 0, 0, 0.8); }
-            20% { text-shadow: -1px -1px 0 rgba(0, 255, 0, 0.8); }
-            40% { text-shadow: 1px -1px 0 rgba(0, 0, 255, 0.8); }
-            60% { text-shadow: -1px 1px 0 rgba(255, 255, 0, 0.8); }
-            100% { text-shadow: 0 0 0 rgba(0, 0, 0, 0); }
         }
     </style>
 </head>
