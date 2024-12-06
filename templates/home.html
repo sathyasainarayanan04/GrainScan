@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>  
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -8,32 +8,28 @@
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- FontAwesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="GrainScan/static/styles/home_styles.css">
+  
+  <!-- Internal CSS -->
   <style>
+    :root {
+      --background-color: #ffffff;
+      --primary-accent: #005f73;
+      --secondary-accent: #0a9396;
+      --text-color: #001219;
+      --highlight-color: #ee9b00;
+    }
+    
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      line-height: 1.7;
+      margin: 0;
+      padding: 0;
+      transition: margin-left 0.3s;
     }
-    .section {
-      padding: 60px 0;
-    }
-    #home {
-      background: #007bff;
-      color: white;
-      text-align: center;
-    }
-    #how-it-works {
-      background: #f8f9fa;
-      color: #212529;
-    }
-    #team {
-      background: #343a40;
-      color: white;
-    }
-    .team-member img {
-      width: 100%;
-      border-radius: 10px;
-    }
+    
+    /* Navigation */
     .sidenav {
       height: 100%;
       width: 0;
@@ -41,32 +37,92 @@
       z-index: 1;
       top: 0;
       left: 0;
-      background-color: #111;
+      background-color: var(--primary-accent);
       overflow-x: hidden;
       transition: 0.5s;
       padding-top: 60px;
     }
+    
     .sidenav a {
-      padding: 10px 15px;
+      padding: 10px 10px 10px 30px;
       text-decoration: none;
       font-size: 18px;
-      color: white;
+      color: var(--background-color);
       display: block;
       transition: 0.3s;
     }
+    
     .sidenav a:hover {
-      color: #f1f1f1;
+      color: var(--highlight-color);
     }
+    
     .sidenav .closebtn {
       position: absolute;
-      top: 0;
-      right: 20px;
+      top: 20px;
+      right: 25px;
       font-size: 36px;
-      margin-left: 50px;
     }
-    #main {
-      transition: margin-left 0.5s;
-      padding: 20px;
+    
+    /* Section */
+    .section {
+      padding: 80px 20px;
+      color: var(--text-color);
+      text-align: center;
+    }
+    
+    .section-heading {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: var(--primary-accent);
+      margin-bottom: 30px;
+    }
+    
+    .section-heading::after {
+      content: '';
+      width: 80px;
+      height: 4px;
+      background-color: var(--highlight-color);
+      display: block;
+      margin: 1em auto;
+    }
+    
+    /* Home */
+    #home {
+      background: linear-gradient(135deg, #0a9396, #005f73);
+      color: var(--background-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      position: relative;
+    }
+    
+    #home p {
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 15px;
+      border-radius: 10px;
+    }
+    
+    /* Team Section */
+    #team {
+      background: linear-gradient(135deg, #ee9b00, #001219);
+      color: var(--background-color);
+      padding: 60px 20px;
+    }
+    
+    .card {
+      background-color: var(--secondary-accent);
+      color: var(--background-color);
+      border: none;
+      transition: transform 0.3s;
+    }
+    
+    .card:hover {
+      transform: scale(1.05);
+    }
+    
+    .card-title {
+      color: var(--highlight-color);
     }
   </style>
 </head>
@@ -78,53 +134,73 @@
     <a href="#home">Home</a>
     <a href="#how-it-works">How It Works</a>
     <a href="#team">About the Team</a>
-    <a href="/predict">Try Now</a>
+    <a href="/predict">Try now</a>
   </div>
 
   <!-- Main content with menu button -->
   <div id="main">
-    <span style="font-size: 30px; cursor: pointer;" onclick="openNav()">&#9776; Menu</span>
+    <span style="font-size: 30px; cursor: pointer; padding-left: 20px;" onclick="openNav()">&#9776; Menu</span>
 
     <!-- Home Section -->
     <section id="home" class="section">
       <div class="container">
-        <h1 class="display-4">Rice Grain Health Check</h1>
-        <p class="lead">Welcome to Grain Scan, a deep learning-driven app that predicts the health of rice grains.</p>
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="section-heading" style="color: #ffffff;">Rice Grain Health Check</h2>
+            <p>Welcome to Grain Scan, a deep learning-driven app that predicts the health of rice grains.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- How It Works Section -->
     <section id="how-it-works" class="section">
-      <div class="container text-center">
-        <h2 class="section-heading">How It Works</h2>
-        <p>Our model leverages ResNet, a powerful convolutional neural network, to analyze images of rice grains and assess their health status.</p>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <h2 class="section-heading">How It Works</h2>
+            <p>Our model is based on ResNet architecture, which is a deep convolutional neural network. It analyzes images of rice grains to determine their health status.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- About the Team Section -->
     <section id="team" class="section">
-      <div class="container text-center">
-        <h2 class="section-heading mb-5">Meet the Team</h2>
-        <div class="row">
+      <div class="container">
+        <h2 class="section-heading text-center mb-5" style="color: #ffffff;">Meet the Team</h2>
+        <div class="row justify-content-center">
           <div class="col-lg-4">
-            <div class="team-member">
-              <img src="team_member1.jpg" alt="Team Member 1" class="img-fluid">
-              <h5 class="mt-3">John Doe</h5>
-              <p>Deep Learning Engineer</p>
+            <div class="team-member text-center">
+              <img src="team_member1.jpg" alt="Team Member 1">
+              <div class="card mt-3">
+                <div class="card-body">
+                  <h5 class="card-title">John Doe</h5>
+                  <p class="card-text">Deep Learning Engineer</p>
+                </div>
+              </div>
             </div>
           </div>
           <div class="col-lg-4">
-            <div class="team-member">
-              <img src="team_member2.jpg" alt="Team Member 2" class="img-fluid">
-              <h5 class="mt-3">Jane Smith</h5>
-              <p>Data Scientist</p>
+            <div class="team-member text-center">
+              <img src="team_member2.jpg" alt="Team Member 2">
+              <div class="card mt-3">
+                <div class="card-body">
+                  <h5 class="card-title">Jane Smith</h5>
+                  <p class="card-text">Data Scientist</p>
+                </div>
+              </div>
             </div>
           </div>
           <div class="col-lg-4">
-            <div class="team-member">
-              <img src="team_member3.jpg" alt="Team Member 3" class="img-fluid">
-              <h5 class="mt-3">David Johnson</h5>
-              <p>Machine Learning Engineer</p>
+            <div class="team-member text-center">
+              <img src="team_member3.jpg" alt="Team Member 3">
+              <div class="card mt-3">
+                <div class="card-body">
+                  <h5 class="card-title">David Johnson</h5>
+                  <p class="card-text">Machine Learning Engineer</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
